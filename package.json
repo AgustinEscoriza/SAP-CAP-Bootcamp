@@ -17,12 +17,24 @@
     "@sap/cds-dk": "^8"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "hybrid": "cds watch --profile hybrid"
   },
   "cds": {
     "requires": {
-      "auth": "xsuaa",
-      "destinations": true
+        "[production]": {
+            "db": "hana",
+            "auth": "xsuaa"
+        },
+        "[development]": {
+            "db": "sql",
+            "credentials": {
+                "url": "db.sqlite"
+            }
+        },
+        "[hybrid]": {
+            "db": "hana"
+        }
     },
     "sql": {
       "native_hana_associations": false
