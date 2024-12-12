@@ -9,7 +9,9 @@
     "@sap/cds": "^8",
     "express": "^4",
     "@sap/xssec": "^4",
-    "@cap-js/hana": "^1"
+    "@cap-js/hana": "^1",
+    "passport": "^0",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.7.0",
@@ -18,23 +20,25 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "hybrid": "cds watch --profile hybrid"
+    "hybrid": "cds watch --profile hybrid",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   },
   "cds": {
     "requires": {
-        "[production]": {
-            "db": "hana",
-            "auth": "xsuaa"
-        },
-        "[development]": {
-            "db": "sql",
-            "credentials": {
-                "url": "db.sqlite"
-            }
-        },
-        "[hybrid]": {
-            "db": "hana"
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "[development]": {
+        "db": "sql",
+        "credentials": {
+          "url": "db.sqlite"
         }
+      },
+      "[hybrid]": {
+        "db": "hana"
+      }
     },
     "sql": {
       "native_hana_associations": false
