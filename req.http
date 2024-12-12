@@ -1,0 +1,14 @@
+####
+GET http://localhost:33853/test/Books
+Authorization: Basic base64-user-password
+
+####
+GET http://localhost:33853/test/Books(1)
+Authorization: Basic base64-user-password
+
+####
+POST http://localhost:34019/test/Books(1)/buyBook
+Authorization: Basic base64-user-password
+Content-Type: application/json
+
+{}

@@ -1,10 +1,10 @@
-ID,title,stock
-1,Wuthering Heights,100
-2,Jane Eyre,500
-3,1984,300
-4,To Kill a Mockingbird,250
-5,Pride and Prejudice,400
-6,Moby Dick,150
-7,The Great Gatsby,200
-8,War and Peace,120
-9,The Catcher in the Rye,350
+ID,title,stock,isBestSeller
+1,Wuthering Heights,100,true
+2,Jane Eyre,500,true
+3,1984,300,true
+4,To Kill a Mockingbird,250,false
+5,Pride and Prejudice,400,true
+6,Moby Dick,150,false
+7,The Great Gatsby,200,true
+8,War and Peace,120,false
+9,The Catcher in the Rye,350,true
