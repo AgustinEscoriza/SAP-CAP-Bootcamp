@@ -1,24 +1,19 @@
 ####
-GET http://localhost:4004/odata/v4/catalog/Books
+GET http://localhost:4004/test/Books
+
+####
+GET http://localhost:4004/test/Books(1)
+
+####
+GET http://localhost:4004/test/Books/1/getStock()
 Authorization: Basic base64-user-password
 
 ####
-GET http://localhost:4004/odata/v4/catalog/Books(1)
-Authorization: Basic base64-user-password
+GET http://localhost:4004/test/Books(1)/CatalogService.getStock()
 
 ####
-GET http://localhost:4004/odata/v4/catalog/Books/1
-Authorization: Basic base64-user-password
-
-####
-GET http://localhost:4004/odata/v4/catalog/Books(1)/getStock()
-
-####
-POST http://localhost:4004/odata/v4/catalog/Books/1/
+POST http://localhost:4004/test/Books/1/buyBook
 Content-Type: application/json
+Authorization: Basic base64-user-password
 
 {}
-
-####
-GET http://localhost:4004/odata/v4/catalog/calculateTotalStock
-Authorization: Basic base64-user-password
