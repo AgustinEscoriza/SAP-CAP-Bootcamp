@@ -4,15 +4,21 @@ GET http://localhost:4004/test/Books
 ####
 GET http://localhost:4004/test/Books(1)
 
-####
-GET http://localhost:4004/test/Books/1/getStock()
+#### Unbound function
+GET http://localhost:4004/test/calculateTotalStock()
+
+#### Unbound Action
+POST http://localhost:4004/test/resetAllBooks
+Content-Type: application/json
 Authorization: Basic base64-user-password
 
-####
-GET http://localhost:4004/test/Books(1)/CatalogService.getStock()
+{}
 
-####
-POST http://localhost:4004/test/Books/1/buyBook
+#### Bound Function
+GET http://localhost:4004/test/Books(2)/getStock()
+
+#### Bound Action
+POST http://localhost:4004/test/Books(2)/buyBook
 Content-Type: application/json
 Authorization: Basic base64-user-password
 
