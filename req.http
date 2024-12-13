@@ -2,7 +2,7 @@
 GET http://localhost:4004/test/Books
 
 ####
-GET http://localhost:4004/test/Books(1)
+GET http://localhost:4004/test/Books(2)
 
 #### Unbound function
 GET http://localhost:4004/test/calculateTotalStock()
@@ -18,8 +18,9 @@ Authorization: Basic base64-user-password
 GET http://localhost:4004/test/Books(2)/getStock()
 
 #### Bound Action
-POST http://localhost:4004/test/Books(2)/buyBook
+POST http://localhost:4004/test/Books(5)/buyBook
 Content-Type: application/json
 Authorization: Basic base64-user-password
 
-{}
+{
+}

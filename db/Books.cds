@@ -6,3 +6,7 @@ entity Books {
         stock        : Integer;
         isBestSeller : Boolean;
 }
+
+entity Author {
+    name : String;
+}
